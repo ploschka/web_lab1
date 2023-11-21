@@ -8,7 +8,7 @@ df = pd.read_sql('''
                  FROM book
                  INNER JOIN genre ON book.genre_id = genre.genre_id
                  WHERE book.title NOT LIKE '% %'
-                 AND ('Цена' < 500 OR 'Цена' > 700)
+                 AND (price < 500 OR price > 700)
                  ORDER BY 'Название' ASC, 'Жанр' ASC
                  ''', con)
 print(df)
